@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<include resource="org/springframework/boot/logging/logback/base.xml" />
+	<logger name="org.springframework.web" level="INFO" />
+	<logger name="org.springboot.sample" level="TRACE" />
+
+	<!-- 开发 -->
+	<springProfile name="dev">
+		<!-- 将日志记录到文件中 -->
+		<appender name="LOG"
+			class="ch.qos.logback.core.rolling.RollingFileAppender">
+			<File>D:/logs/template/template.log</File>
+			<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+				<FileNamePattern>D:/opt/logs/template/template.%d{yyyy-MM-dd}.log
+				</FileNamePattern>
+			</rollingPolicy>
+			<encoder>
+				<Pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{35} :	%msg %n
+				</Pattern>
+			</encoder>
+		</appender>
+		<logger name="org.springframework.web" level="INFO" />
+		<logger name="org.springboot.sample" level="INFO" />
+		<logger name="com.ddc.template" level="DEBUG" />
+	</springProfile>
+	
+	<!--  测试环境-->
+	<springProfile name="test">
+		<!-- 将日志记录到文件中 -->
+		<appender name="LOG"
+			class="ch.qos.logback.core.rolling.RollingFileAppender">
+			<File>/opt/logs/template/template.log</File>
+			<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+				<FileNamePattern>/opt/logs/template/template.%d{yyyy-MM-dd}.log
+				</FileNamePattern>
+			</rollingPolicy>
+			<encoder>
+				<Pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{35} :	%msg %n
+				</Pattern>
+			</encoder>
+		</appender>
+
+		<logger name="org.springframework.web" level="INFO" />
+		<logger name="org.springboot.sample" level="INFO" />
+		<logger name="com.ddc.template" level="DEBUG" />
+	</springProfile>
+
+	<!-- 生产环境 -->
+	<springProfile name="prod">
+		<!-- 将日志记录到文件中 -->
+		<appender name="LOG"
+			class="ch.qos.logback.core.rolling.RollingFileAppender">
+			<File>/opt/logs/template/template.log</File>
+			<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+				<FileNamePattern>/opt/logs/template/template.%d{yyyy-MM-dd}.log
+				</FileNamePattern>
+			</rollingPolicy>
+			<encoder>
+				<Pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{35} -
+					%msg %n
+				</Pattern>
+			</encoder>
+		</appender>
+		<logger name="org.springframework.web" level="ERROR" />
+		<logger name="org.springboot.sample" level="ERROR" />
+		<logger name="com.ddc.template" level="ERROR" />
+	</springProfile>
+
+	<root level="INFO">
+		<appender-ref ref="LOG" />
+	</root>
+</configuration>
