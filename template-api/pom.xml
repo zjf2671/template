@@ -7,7 +7,7 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>template-api</artifactId>
-	<name>向外暴露api接口</name>
+	<name>template-admin</name>
 	<description>这个项目是提供向外暴露api接口</description>
 
 	<properties>
@@ -17,17 +17,21 @@
 	<build>
 		<finalName>${project.artifactId}</finalName>
 		<plugins>
-			<!-- <plugin>
+			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<executions>
-					<execution>
-						<goals>
-							<goal>repackage</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin> -->
+				<configuration>
+					<fork>true</fork>
+				</configuration>
+			</plugin>
+			<!-- 跳过单元测试 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+					<skipTests>true</skipTests>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 

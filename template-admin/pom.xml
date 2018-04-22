@@ -7,7 +7,7 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>template-admin</artifactId>
-	<name>没有进行前后分离项目</name>
+	<name>template-admin</name>
 	<description>没有进行前后分离项目</description>
 
 	<properties>

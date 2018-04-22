@@ -7,7 +7,7 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>temppate-app</artifactId>
-	<name>用于H5调用</name>
+	<name>temppate-app</name>
 	<description>用于H5调用</description>
 
 	<properties>
@@ -181,7 +181,6 @@
 					<skipTests>true</skipTests>
 				</configuration>
 			</plugin>
-
 		</plugins>
 	</build>
 

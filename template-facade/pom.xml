@@ -8,7 +8,7 @@
 	</parent>
 	<artifactId>template-facade</artifactId>
 	<name>template-facade</name>
-
+	<description>用于测试提供者的项目</description>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

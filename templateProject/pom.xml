@@ -7,8 +7,9 @@
 		<artifactId>template</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<name>主要代码实现</name>
 	<artifactId>templateProject</artifactId>
+	<name>templateProject</name>
+	<description>主要代码实现</description>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
