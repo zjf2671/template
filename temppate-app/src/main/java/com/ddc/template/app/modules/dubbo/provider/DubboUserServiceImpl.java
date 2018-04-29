@@ -8,6 +8,7 @@ import com.alibaba.dubbo.config.annotation.Service;
 import com.ddc.template.api.user.DubboUserService;
 import com.ddc.template.app.modules.user.entity.UserEntity;
 import com.ddc.template.app.modules.user.service.UserService;
+import com.ddc.template.common.utils.BeanCommonUtils;
 import com.ddc.template.model.user.UserDTO;
 
 
@@ -23,7 +24,7 @@ public class DubboUserServiceImpl implements DubboUserService {
 		UserEntity userEntity = userService.queryByMobile(mobile);
 		UserDTO userDTO = new UserDTO();
 		if(userEntity != null){
-			BeanUtils.copyProperties(userEntity, userDTO);
+			BeanCommonUtils.copyProperties(userEntity, userDTO);
 			return userDTO;
 		}else{
 			return null;
