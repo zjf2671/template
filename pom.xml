@@ -16,12 +16,12 @@
 	</parent>
 
 	<modules>
-		<!-- <module>template-api</module>
-		<module>template-common</module> -->
+		<module>template-api</module>
+		<module>template-common</module>
 		<module>templateProject</module>
 		<module>temppate-app</module>
 		<module>template-admin</module>
-		<!-- <module>template-facade</module> -->
+		<module>template-facade</module>
 	</modules>
 
 	<properties>
