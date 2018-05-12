@@ -79,4 +79,8 @@ app:
         # token有效时长，7天，单位秒
         expire: 604800
         header: token
-
+logging:
+  level: debug
+  level.com.ddc: debug
+  path: logs/
+  file: admin-template

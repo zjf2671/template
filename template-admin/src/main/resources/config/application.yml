@@ -77,3 +77,8 @@ mybatis-plus:
     map-underscore-to-camel-case: true
     cache-enabled: false
     call-setters-on-nulls: true
+logging:
+  level: debug
+  level.com.ddc: debug
+  path: logs/
+  file: admin-template
