@@ -80,5 +80,5 @@ mybatis-plus:
 logging:
   level: debug
   level.com.ddc: debug
-  path: logs
+  path: logs/
   file: admin-template

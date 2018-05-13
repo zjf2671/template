@@ -81,5 +81,5 @@ template:
 logging:
   level: debug
   level.com.ddc: debug
-  path: logs
+  path: logs/
   file: templateProject
