@@ -82,4 +82,4 @@ logging:
   level: debug
   level.com.ddc: debug
   path: logs/
-  file: admin-template
+  file: templateProject
