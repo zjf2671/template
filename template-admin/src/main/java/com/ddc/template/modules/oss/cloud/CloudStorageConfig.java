@@ -3,9 +3,9 @@ package com.ddc.template.modules.oss.cloud;
 
 import java.io.Serializable;
 
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
-import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.Range;
 import org.hibernate.validator.constraints.URL;
 

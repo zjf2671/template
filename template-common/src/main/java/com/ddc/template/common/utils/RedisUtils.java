@@ -19,7 +19,7 @@ import javax.annotation.Resource;
 @Component
 public class RedisUtils {
     @Autowired
-    private RedisTemplate redisTemplate;
+    private RedisTemplate<String, ?> redisTemplate;
     @Resource(name="redisTemplate")
     private ValueOperations<String, String> valueOperations;
     @Resource(name="redisTemplate")

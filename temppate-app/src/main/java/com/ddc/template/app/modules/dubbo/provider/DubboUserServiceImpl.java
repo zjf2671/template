@@ -1,7 +1,6 @@
 package com.ddc.template.app.modules.dubbo.provider;
 
 
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.alibaba.dubbo.config.annotation.Service;

@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import com.ddc.template.app.modules.user.interceptor.AuthorizationInterceptor;
 import com.ddc.template.app.modules.user.resolver.LoginUserHandlerMethodArgumentResolver;
@@ -18,7 +18,7 @@ import com.ddc.template.app.modules.user.resolver.LoginUserHandlerMethodArgument
  * 
  */
 @Configuration
-public class WebMvcConfig extends WebMvcConfigurerAdapter {
+public class WebMvcConfig implements WebMvcConfigurer {
     @Autowired
     private AuthorizationInterceptor authorizationInterceptor;
     @Autowired

@@ -41,7 +41,8 @@ public class DataFilterAspect {
 
     }
 
-    @Before("dataFilterCut()")
+    @SuppressWarnings("unchecked")
+	@Before("dataFilterCut()")
     public void dataFilter(JoinPoint point) throws Throwable {
         Object params = point.getArgs()[0];
         if(params != null && params instanceof Map){
@@ -49,7 +50,7 @@ public class DataFilterAspect {
 
             //如果不是超级管理员，则进行数据过滤
             if(user.getUserId() != Constant.SUPER_ADMIN){
-                Map map = (Map)params;
+                Map<String, String> map = (Map<String, String>)params;
                 map.put(Constant.SQL_FILTER, getSQLFilter(user, point));
             }
 

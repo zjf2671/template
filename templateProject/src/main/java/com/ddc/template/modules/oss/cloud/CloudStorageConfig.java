@@ -1,7 +1,6 @@
 package com.ddc.template.modules.oss.cloud;
 
 
-import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.Range;
 import org.hibernate.validator.constraints.URL;
 
@@ -9,6 +8,7 @@ import com.ddc.template.common.validator.group.AliyunGroup;
 import com.ddc.template.common.validator.group.QcloudGroup;
 import com.ddc.template.common.validator.group.QiniuGroup;
 
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 

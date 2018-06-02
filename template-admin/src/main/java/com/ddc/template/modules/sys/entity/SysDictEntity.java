@@ -3,9 +3,10 @@ package com.ddc.template.modules.sys.entity;
 import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.annotations.TableLogic;
 import com.baomidou.mybatisplus.annotations.TableName;
-import org.hibernate.validator.constraints.NotBlank;
 
 import java.io.Serializable;
+
+import javax.validation.constraints.NotBlank;
 
 /**
  * 数据字典

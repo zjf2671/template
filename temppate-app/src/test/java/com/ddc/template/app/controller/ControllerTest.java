@@ -31,6 +31,7 @@ public class ControllerTest {
 	public void setupMock() {
 		AppTestController appTestController = new AppTestController();
 		mockMvc = standaloneSetup(appTestController).build();
+		context.containsBean("a");
 		//mockMvc = webAppContextSetup(context).build();
 	}
 

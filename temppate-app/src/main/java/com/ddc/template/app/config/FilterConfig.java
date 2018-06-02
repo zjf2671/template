@@ -18,8 +18,8 @@ import com.ddc.template.common.xss.XssFilter;
 public class FilterConfig {
 
     @Bean
-    public FilterRegistrationBean xssFilterRegistration() {
-        FilterRegistrationBean registration = new FilterRegistrationBean();
+    public FilterRegistrationBean<XssFilter> xssFilterRegistration() {
+        FilterRegistrationBean<XssFilter> registration = new FilterRegistrationBean<XssFilter>();
         registration.setDispatcherTypes(DispatcherType.REQUEST);
         registration.setFilter(new XssFilter());
         registration.addUrlPatterns("/*");

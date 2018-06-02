@@ -2,7 +2,7 @@ package com.ddc.template.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /**
  * 资源
@@ -11,7 +11,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
  * 
  */
 @Configuration
-public class ResourcesConfig extends WebMvcConfigurerAdapter {
+public class ResourcesConfig implements WebMvcConfigurer {
 	
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
