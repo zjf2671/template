@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.ImportResource;
 
-import com.ddc.template.facade.CityFacade;
+import com.ddc.template.facade.LogFacade;
 
 /**
  * @author harry.zhang
@@ -19,8 +19,8 @@ public class FacadeApplication {
 
 	public static void main(String[] args) throws IOException {
 		ConfigurableApplicationContext run = SpringApplication.run(FacadeApplication.class, args);
-		CityFacade cityFacade = (CityFacade) run.getBean("cityFacade");
-		System.out.println(cityFacade.findCityByName(1L));
+		LogFacade logFacade = (LogFacade) run.getBean("logFacade");
+		System.out.println(logFacade.queryLogById(1L));
 	}
 
 }
