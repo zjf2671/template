@@ -21,7 +21,7 @@ import com.ddc.template.common.exception.BusinessException;
 public class RedisAspect {
     private Logger logger = LoggerFactory.getLogger(getClass());
     //是否开启redis缓存  true开启   false关闭
-    @Value("${ddc.redis.open: false}")
+    @Value("${template.redis.open: false}")
     private boolean open;
 
     @Around("execution(* com.ddc.template.common.utils.RedisUtils.*(..))")
