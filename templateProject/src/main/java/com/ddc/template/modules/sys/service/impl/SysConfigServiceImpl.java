@@ -27,12 +27,12 @@ public class SysConfigServiceImpl extends ServiceImpl<SysConfigDao, SysConfigEnt
 
 	@Override
 	public PageUtils queryPage(Map<String, Object> params) {
-		String key = (String)params.get("key");
+		String paramKey = (String)params.get("paramKey");
 
 		Page<SysConfigEntity> page = this.selectPage(
 				new Query<SysConfigEntity>(params).getPage(),
 				new EntityWrapper<SysConfigEntity>()
-					.like(StringUtils.isNotBlank(key),"key", key)
+					.like(StringUtils.isNotBlank(paramKey),"paramKey", paramKey)
 					.eq("status", 1)
 		);
 
@@ -48,7 +48,7 @@ public class SysConfigServiceImpl extends ServiceImpl<SysConfigDao, SysConfigEnt
 	@Override
 	@Transactional(rollbackFor = Exception.class)
 	public void update(SysConfigEntity config) {
-		this.updateById(config);
+		this.updateAllColumnById(config);
 		sysConfigRedis.saveOrUpdate(config);
 	}
 
@@ -64,7 +64,7 @@ public class SysConfigServiceImpl extends ServiceImpl<SysConfigDao, SysConfigEnt
 	public void deleteBatch(Long[] ids) {
 		for(Long id : ids){
 			SysConfigEntity config = this.selectById(id);
-			sysConfigRedis.delete(config.getKey());
+			sysConfigRedis.delete(config.getParamKey());
 		}
 
 		this.deleteBatchIds(Arrays.asList(ids));
@@ -78,7 +78,7 @@ public class SysConfigServiceImpl extends ServiceImpl<SysConfigDao, SysConfigEnt
 			sysConfigRedis.saveOrUpdate(config);
 		}
 
-		return config == null ? null : config.getValue();
+		return config == null ? null : config.getParamValue();
 	}
 	
 	@Override
