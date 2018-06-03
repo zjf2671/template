@@ -559,7 +559,7 @@ paths:
           description: 排序方式，如：asc、desc
           in: query
           type: string
-        - name: key
+        - name: paramKey
           description: 参数名
           in: query
           type: string
@@ -1377,10 +1377,10 @@ definitions:
         description: 参数ID
         type: integer
         format: int64
-      key:
+      paramKey:
         description: 参数名
         type: string
-      value:
+      paramValue:
         description: 参数值
         type: string
       remark:
