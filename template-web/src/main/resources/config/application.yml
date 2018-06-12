@@ -1,0 +1,68 @@
+# Tomcat
+server:
+    tomcat:
+        uri-encoding: UTF-8
+        max-threads: 1000
+        min-spare-threads: 30
+    port: 8080
+    connection-timeout: 5000
+    servlet:
+       context-path: /template-web
+
+spring:
+    # 环境 local|dev|test|prod
+    profiles:
+        active: dev
+    # jackson时间格式化
+    jackson:
+        time-zone: GMT+8
+        date-format: yyyy-MM-dd HH:mm:ss
+    http:
+        multipart:
+            max-file-size: 100MB
+            max-request-size: 100MB
+            enabled: true
+    # Email
+    mail: 
+        default-encoding: UTF-8 # Default MimeMessage encoding.
+        host: smtp.exmail.qq.com # SMTP server host. For instance, `smtp.example.com`.
+        username: ddcstore@daydaycook.com # Login user of the SMTP server.
+        password: Dstore123 # Login password of the SMTP server.  
+        #port: 465 # SMTP server port. 
+        #protocol: smtp # Protocol used by the SMTP server.
+        properties.mail.smtp.auth: true
+        properties.mail.smtp.starttls.enable: true
+        properties.mail.smtp.starttls.required: true
+        #test-connection: false
+        #jndi-name: # Session JNDI name. When set, takes precedence over other mail settings. 
+    #freemarker
+    freemarker:
+             template-loader-path: classpath:/static/template/
+             #suffix: .flt
+             enabled: true
+             cache: false
+             charset: UTF-8
+             content-type: text/html
+             allow-request-override: false
+             check-template-location: true
+             expose-request-attributes: false
+             expose-session-attributes: false
+             expose-spring-macro-helpers: false            
+template:
+    redis:
+        open: true  # 是否开启redis缓存  true开启   false关闭
+        
+app:
+    # APP模块，是通过jwt认证的，如果要使用APP模块，则需要修改【加密秘钥】
+    jwt:
+        # 加密秘钥
+        secret: f4e2e52034348f86b67cde581c0f9eb5[www.ddc.com]
+        # token有效时长，7天，单位秒
+        expire: 604800
+        header: token
+
+zookeeper:
+    local : zookeeper://127.0.0.1:2181
+    dev : zookeeper://10.23.198.232:2181
+    test : zookeeper://10.23.187.65:2181
+    prod : zookeeper://10.23.187.65:2181

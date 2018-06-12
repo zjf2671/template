@@ -22,6 +22,7 @@
 		<module>temppate-app</module>
 		<module>template-admin</module>
 		<module>template-facade</module>
+		<module>template-web</module>
 	</modules>
 
 	<properties>
