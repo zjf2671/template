@@ -12,9 +12,9 @@
 	<!-- 注册中心地址 -->
 	    <!-- zookeeper 注册中心
         local : zookeeper://127.0.0.1:2181
-        dev : zookeeper://10.23.198.232:2181
-        test : zookeeper://10.23.187.65:2181
-        prod : zookeeper://10.23.187.65:2181
+        dev : zookeeper://127.0.0.1:2181
+        test : zookeeper://127.0.0.1:2181
+        prod : zookeeper://127.0.0.1:2181
      -->
 	<dubbo:registry protocol="zookeeper" address="${zookeeper.dev}" />
 	
