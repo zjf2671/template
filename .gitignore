@@ -30,6 +30,7 @@ target/
 /logs
 *.log
 *.log.*
+logs/
  
 # project release file
 /*.war
