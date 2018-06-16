@@ -17,8 +17,9 @@ import java.util.concurrent.TimeUnit;
  * @author harry.zhang
  */
 @Component
-@SuppressWarnings("rawtypes")
+@SuppressWarnings("unchecked")
 public class RedisShiroSessionDAO extends EnterpriseCacheSessionDAO {
+	@SuppressWarnings("rawtypes")
 	@Autowired
     private RedisTemplate redisTemplate;
 
@@ -51,7 +52,7 @@ public class RedisShiroSessionDAO extends EnterpriseCacheSessionDAO {
     }
 
     //删除session
-    @Override
+	@Override
     protected void doDelete(Session session) {
         super.doDelete(session);
         final String key = RedisKeys.getShiroSessionKey(session.getId().toString());
