@@ -22,17 +22,6 @@ spring:
             max-file-size: 100MB
             max-request-size: 100MB
             enabled: true
-    redis:
-        database: 0
-        host: 101.37.81.46
-        port: 6379
-        password: Daydaycook0301      # 密码（默认为空）
-        timeout: 6000  # 连接超时时长（毫秒）
-        pool:
-            max-active: 1000  # 连接池最大连接数（使用负值表示没有限制）
-            max-wait: -1      # 连接池最大阻塞等待时间（使用负值表示没有限制）
-            max-idle: 10      # 连接池中的最大空闲连接
-            min-idle: 5       # 连接池中的最小空闲连接
     freemarker:
       suffix: .html
       request-context-attribute: request
@@ -40,7 +29,6 @@ spring:
 #mybatis:
 #    mapperLocations: classpath:mapper/**/*.xml
 #    configLocation: classpath:mybatis.xml
-
 
 template:
     redis:
@@ -77,6 +65,12 @@ mybatis-plus:
     map-underscore-to-camel-case: true
     cache-enabled: false
     call-setters-on-nulls: true
+    
+zookeeper:
+  dev: zookeeper://localhost:2181
+  test: zookeeper://localhost:2181
+  prod: zookeeper://localhost:2181
+  
 logging:
   level: debug
   level.com.ddc: debug

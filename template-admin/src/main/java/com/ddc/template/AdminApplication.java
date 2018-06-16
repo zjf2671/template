@@ -6,12 +6,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.ImportResource;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.ddc.template.datasources.DynamicDataSourceConfig;
 
 @SpringBootApplication(exclude = { DataSourceAutoConfiguration.class })
 @Import({ DynamicDataSourceConfig.class })
-// @EnableTransactionManagement
+@EnableTransactionManagement
 @ImportResource("classpath:config/provider.xml")
 public class AdminApplication {
 

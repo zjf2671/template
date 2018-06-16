@@ -17,9 +17,10 @@ import java.util.concurrent.TimeUnit;
  * @author harry.zhang
  */
 @Component
+@SuppressWarnings("rawtypes")
 public class RedisShiroSessionDAO extends EnterpriseCacheSessionDAO {
-    @Autowired
-    private RedisTemplate<String, Session> redisTemplate;
+	@Autowired
+    private RedisTemplate redisTemplate;
 
     //创建session
     @Override

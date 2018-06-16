@@ -1,8 +1,8 @@
 swagger: '2.0'
 info:
-  description: template后台接口文档
+  description: template-admin后台接口文档
   version: 3.0.0
-  title: template
+  title: template-admin
 
 basePath: /admin
 
