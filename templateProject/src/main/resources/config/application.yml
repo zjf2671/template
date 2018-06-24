@@ -69,8 +69,3 @@ zookeeper:
   test: zookeeper://localhost:2181
   prod: zookeeper://localhost:2181
   
-logging:
-  level: debug
-  level.com.ddc: debug
-  path: logs/
-  file: templateProject
