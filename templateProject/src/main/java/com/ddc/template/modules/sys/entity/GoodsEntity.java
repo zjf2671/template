@@ -5,6 +5,7 @@ import java.math.BigDecimal;
 
 import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.annotations.TableName;
+import com.baomidou.mybatisplus.annotations.Version;
 
 /**
  * 商品管理
@@ -36,6 +37,12 @@ public class GoodsEntity implements Serializable {
 	 * 数量
 	 */
 	private Integer num;
+	
+	/**
+	 * 版本号
+	 */
+	@Version
+	private Integer version;
 
 	/**
 	 * 设置：
@@ -97,4 +104,11 @@ public class GoodsEntity implements Serializable {
 	public Integer getNum() {
 		return num;
 	}
+	public Integer getVersion() {
+		return version;
+	}
+	public void setVersion(Integer version) {
+		this.version = version;
+	}
+	
 }

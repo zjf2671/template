@@ -3,6 +3,7 @@ package com.ddc.template.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import com.baomidou.mybatisplus.plugins.OptimisticLockerInterceptor;
 import com.baomidou.mybatisplus.plugins.PaginationInterceptor;
 import com.ddc.template.datasources.DynamicDataSourceInterceptor;
 
@@ -20,6 +21,16 @@ public class MybatisPlusConfig {
     @Bean
     public PaginationInterceptor paginationInterceptor() {
         return new PaginationInterceptor();
+    }
+    
+    
+    /**
+     * 乐观锁插件
+     * @return
+     */
+    @Bean
+    public OptimisticLockerInterceptor optimisticLockerInterceptor () {
+    	return new OptimisticLockerInterceptor();
     }
     
     /**

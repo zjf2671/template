@@ -24,5 +24,10 @@ public class GoodsServiceTest {
 		boolean updateForSet = goodsService.updateForSet("name=''", new EntityWrapper<>(goods));
 		Assert.assertTrue(updateForSet);
 	}
+	
+	@Test
+	public void testTracation(){
+		goodsService.testUpdateListTraction();
+	}
 
 }

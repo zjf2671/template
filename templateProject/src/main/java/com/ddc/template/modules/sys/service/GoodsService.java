@@ -14,5 +14,9 @@ import java.util.Map;
 public interface GoodsService extends IService<GoodsEntity> {
 
     PageUtils queryPage(Map<String, Object> params);
+    
+    public void testUpateTraction(Integer num1, Integer num2);
+    
+    public void testUpdateListTraction();
 }
 
