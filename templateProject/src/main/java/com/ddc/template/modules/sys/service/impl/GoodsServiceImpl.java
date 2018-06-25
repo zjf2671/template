@@ -44,7 +44,7 @@ public class GoodsServiceImpl extends ServiceImpl<GoodsDao, GoodsEntity> impleme
 			}
 			updateById(c);
 		});
-//		updateBatchById(geList); //此中方式更新会有问题，同事务相同商品只会更新列表第一个商品，version只会+1，后面都不会更新
+//		updateBatchById(geList); //此种方式更新会有问题，同事务相同商品只会更新列表第一个商品，version只会+1，后面都不会更新
 	}
 	
 	@Override
