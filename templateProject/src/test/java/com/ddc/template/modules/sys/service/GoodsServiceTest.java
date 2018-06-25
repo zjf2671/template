@@ -21,13 +21,13 @@ public class GoodsServiceTest {
 	public void testUpdateForSet() {
 		GoodsEntity goods = new GoodsEntity();
 		goods.setGoodsId(3L);
-		boolean updateForSet = goodsService.updateForSet("name=''", new EntityWrapper<>(goods));
+		boolean updateForSet = goodsService.updateForSet("name="+goods.getName(), new EntityWrapper<>(goods));
 		Assert.assertTrue(updateForSet);
 	}
 	
 	@Test
 	public void testTracation(){
-		goodsService.testUpdateListTraction();
+		goodsService.testUpdateListTransaction();
 	}
 
 }

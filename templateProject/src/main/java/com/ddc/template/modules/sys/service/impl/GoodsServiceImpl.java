@@ -33,7 +33,7 @@ public class GoodsServiceImpl extends ServiceImpl<GoodsDao, GoodsEntity> impleme
     
 	@Override
 	@Transactional
-	public void testUpateTraction(Integer num1, Integer num2) {
+	public void testUpateTransaction(Integer num1, Integer num2) {
 		List<GoodsEntity> geList = this.selectList(null);
 		geList.forEach(c->{
 			if(c.getGoodsId().equals(3L)){
@@ -44,14 +44,14 @@ public class GoodsServiceImpl extends ServiceImpl<GoodsDao, GoodsEntity> impleme
 			}
 			updateById(c);
 		});
-		//updateByBatchId(geList) //此中方式更新会有问题，同事务相同商品只会更最开始那一个商品，后面都不会更新
+//		updateBatchById(geList); //此中方式更新会有问题，同事务相同商品只会更新列表第一个商品，version只会+1，后面都不会更新
 	}
 	
 	@Override
 	@Transactional
-	public void testUpdateListTraction(){
+	public void testUpdateListTransaction(){
 		for(int i=1;i<3;i++){
-			testUpateTraction(i,i+1);
+			testUpateTransaction(i,i+1);
 		}
 	}
 	
