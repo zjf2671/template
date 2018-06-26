@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.plugins.Page;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
+import com.ddc.template.common.annotation.Servicelock;
 import com.ddc.template.common.utils.PageUtils;
 import com.ddc.template.common.utils.Query;
 import com.ddc.template.modules.sys.dao.GoodsDao;
@@ -29,8 +30,14 @@ public class GoodsServiceImpl extends ServiceImpl<GoodsDao, GoodsEntity> impleme
         return new PageUtils(page);
     }
 
-    
-    
+//    @Servicelock
+//    public void insertGoods(){
+//    	GoodsEntity ge = new GoodsEntity();
+//    	ge.setName("222");
+//    	insert(ge);
+//    	System.err.println("业务代码====");
+//    }
+//    
 	@Override
 	@Transactional
 	public void testUpateTransaction(Integer num1, Integer num2) {
@@ -44,11 +51,13 @@ public class GoodsServiceImpl extends ServiceImpl<GoodsDao, GoodsEntity> impleme
 			}
 			updateById(c);
 		});
+//		insertGoods();
 //		updateBatchById(geList); //此种方式更新会有问题，同事务相同商品只会更新列表第一个商品，version只会+1，后面都不会更新
 	}
 	
 	@Override
 	@Transactional
+	@Servicelock
 	public void testUpdateListTransaction(){
 		for(int i=1;i<3;i++){
 			testUpateTransaction(i,i+1);
