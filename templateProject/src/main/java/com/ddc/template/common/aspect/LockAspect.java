@@ -34,14 +34,12 @@ public class LockAspect {
 	}
 	
     @Around("lockAspectPoint()")
-    public  Object around(ProceedingJoinPoint joinPoint) { 
+    public  Object around(ProceedingJoinPoint joinPoint) throws Throwable { 
     	System.out.println("开始lock");
     	lock.lock();
     	Object obj = null;
 		try {
 			obj = joinPoint.proceed();
-		} catch (Throwable e) {
-			e.printStackTrace();
 		} finally{
 			lock.unlock();
 			System.out.println("结束unlock");
