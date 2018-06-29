@@ -14,13 +14,16 @@ import org.springframework.stereotype.Component;
  * 同步锁 AOP
  * @author harry.zhang
  * @date 2018年6月26日上午9:51:33
- * @transaction 以及 order 说明
+ * @transaction 中 order 说明
+ * https://docs.spring.io/spring/docs/4.3.14.RELEASE/spring-framework-reference/htmlsingle/#transaction-declarative-annotations
+ * https://docs.spring.io/spring/docs/4.3.14.RELEASE/javadoc-api/
  */
 @Component
 @Scope
 @Aspect
 @Order(1)
 //order越小越是最先执行，但更重要的是最先执行的最后结束。order默认值是2147483647
+
 public class LockAspect {
 	/**
      * service 默认是单例的，并发下lock只有一个实例
