@@ -8,6 +8,7 @@ package com.ddc.template.component.util;
 public class MqConstants {
 	//生产者相关配置
 	public final static String QUEUE_NAME = "template.queue";
+	public final static String QUEUE_NAME_REPLY = "template.queue.reply";
 	public final static String EXCHANGES_NAME = "template.exchanges";
 	public final static String ROUTING_KEY = "route-key";
 	public final static String ROUTING_REPLY_KEY = "route-reply-key";

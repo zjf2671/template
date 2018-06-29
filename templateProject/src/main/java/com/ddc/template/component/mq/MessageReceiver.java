@@ -40,7 +40,7 @@ public class MessageReceiver {
      * @param message
      * @return
      */
-    @RabbitListener(bindings = @QueueBinding(value = @Queue(value = MqConstants.QUEUE_NAME, durable = "true", exclusive = "false", autoDelete = "false"),
+    @RabbitListener(bindings = @QueueBinding(value = @Queue(value = MqConstants.QUEUE_NAME_REPLY, durable = "true", exclusive = "false", autoDelete = "false"),
             exchange = @Exchange(value = MqConstants.EXCHANGES_NAME, ignoreDeclarationExceptions = "true", autoDelete = "false"),
             key = MqConstants.ROUTING_REPLY_KEY))
     public String receiveAndReply(byte[] message) {

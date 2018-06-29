@@ -12,7 +12,7 @@ public class MqTests extends BaseSpringBootTest{
 
     @Test
     public void send() {
-        sender.send();
+		sender.send();
     }
 
     @Test
