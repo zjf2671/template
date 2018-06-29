@@ -2,17 +2,12 @@ package com.ddc.template;
 
 import org.apache.commons.lang.builder.ToStringBuilder;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
 
 import com.ddc.template.common.utils.RedisUtils;
 import com.ddc.template.modules.sys.entity.SysUserEntity;
 
-@RunWith(SpringRunner.class)
-@SpringBootTest
-public class RedisTest {
+public class RedisTest extends BaseSpringBootTest{
 	@Autowired
 	private RedisUtils redisUtils;
 

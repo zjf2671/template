@@ -3,18 +3,13 @@ package com.ddc.template;
 
 import org.apache.commons.lang.builder.ToStringBuilder;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
 
 import com.ddc.template.modules.sys.entity.SysUserEntity;
 import com.ddc.template.service.DataSourceTestService;
 
 
-@RunWith(SpringRunner.class)
-@SpringBootTest
-public class DynamicDataSourceTest {
+public class DynamicDataSourceTest extends BaseSpringBootTest{
     @Autowired
     private DataSourceTestService dataSourceTestService;
 
