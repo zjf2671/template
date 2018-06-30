@@ -8,6 +8,7 @@ import org.springframework.amqp.rabbit.annotation.QueueBinding;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
 
+import com.alibaba.fastjson.JSON;
 import com.ddc.template.component.util.MqConstants;
 
 /**
@@ -27,8 +28,8 @@ public class MessageReceiver {
     @RabbitListener(bindings = @QueueBinding(value = @Queue(value = MqConstants.QUEUE_NAME, durable = "true", exclusive = "false", autoDelete = "false"),
             exchange = @Exchange(value = MqConstants.EXCHANGES_NAME, ignoreDeclarationExceptions = "true",  autoDelete = "false"),
             key = MqConstants.ROUTING_KEY))
-    public void receive(byte[] message) {
-        log.info(">>>>>>>>>>> receive：" + new String(message));
+    public void receive(String message) {
+        log.info(">>>>>>>>>>> receive：" + JSON.toJSONString(message));
     }
 
     /**
@@ -43,8 +44,8 @@ public class MessageReceiver {
     @RabbitListener(bindings = @QueueBinding(value = @Queue(value = MqConstants.QUEUE_NAME_REPLY, durable = "true", exclusive = "false", autoDelete = "false"),
             exchange = @Exchange(value = MqConstants.EXCHANGES_NAME, ignoreDeclarationExceptions = "true", autoDelete = "false"),
             key = MqConstants.ROUTING_REPLY_KEY))
-    public String receiveAndReply(byte[] message) {
-        log.info(">>>>>>>>>>> receive：" + new String(message));
+    public String receiveAndReply(String message) {
+        log.info(">>>>>>>>>>> receive：" + JSON.toJSONString(message));
         return ">>>>>>>> I got the message";
     }
 
