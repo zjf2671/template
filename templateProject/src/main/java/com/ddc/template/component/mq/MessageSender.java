@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.alibaba.fastjson.JSON;
+import com.ddc.template.common.validator.Assert;
 import com.ddc.template.component.util.MqConstants;
 
 /**
@@ -42,6 +43,7 @@ public class MessageSender implements RabbitTemplate.ConfirmCallback, RabbitTemp
      * 测试无返回消息的
      */
     public void send(Object message) {
+    	Assert.isNull(message, "发送消息不能为空");
         CorrelationData correlationData = new CorrelationData(UUID.randomUUID().toString());
         log.info("发送的消息{}",correlationData.toString());
         rabbitTemplate.convertAndSend(MqConstants.EXCHANGES_NAME, MqConstants.ROUTING_KEY, JSON.toJSONString(message), correlationData);
@@ -52,6 +54,7 @@ public class MessageSender implements RabbitTemplate.ConfirmCallback, RabbitTemp
      * 测试有返回消息的，需要注意一些问题
      */
     public void sendAndReceive(Object message) {
+    	Assert.isNull(message, "发送消息不能为空");
         CorrelationData correlationData = new CorrelationData(UUID.randomUUID().toString());
         Object o = rabbitTemplate.convertSendAndReceive(MqConstants.EXCHANGES_NAME, MqConstants.ROUTING_REPLY_KEY, JSON.toJSONString(message), correlationData);
         log.info(">>>>>>>>>>> {}", JSON.toJSONString(o));
@@ -84,6 +87,7 @@ public class MessageSender implements RabbitTemplate.ConfirmCallback, RabbitTemp
      */
     @Override
     public void returnedMessage(Message message, int replyCode, String replyText, String exchange, String routingKey) {
-        log.info("消息id：{} 发送失败", message.getMessageProperties().getCorrelationId());
+    	log.info("消息return-message:[{}] replyCode:[{}] replyText:[{}] exchange:[{}] routingKey:[{}] 发送失败",
+				new String(message.getBody()), replyCode, replyText, exchange, routingKey);
     }
 }
