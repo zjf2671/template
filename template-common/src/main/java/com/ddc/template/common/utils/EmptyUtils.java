@@ -6,7 +6,8 @@ import java.util.Map;
 
 /**
  * 判空工具类
- * @author mumu.li
+ * @author harry.zhang
+ * @date 2018年7月5日下午2:53:31
  */
 public class EmptyUtils {
 
