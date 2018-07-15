@@ -53,7 +53,7 @@ mybatis-plus:
     #序列接口实现类配置
     #key-generator: com.baomidou.springboot.xxx
     #逻辑删除配置
-    logic-delete-value: -1
+    logic-delete-value: 1
     logic-not-delete-value: 0
     #自定义填充策略接口实现
     #meta-object-handler: com.baomidou.springboot.xxx
