@@ -53,6 +53,7 @@
 		<!-- <dubbo-spring-boot>1.0.0</dubbo-spring-boot> -->
 		<dubbo-version>2.5.5</dubbo-version>
 		<zkclient-version>0.10</zkclient-version>
+		<curator.version>2.12.0</curator.version>
 	</properties>
 
 	<dependencyManagement>
@@ -191,6 +192,13 @@
 				<artifactId>zkclient</artifactId>
 				<version>${zkclient-version}</version>
 			</dependency>
+			
+		 	<!-- zookeeper 分布式锁、注意zookeeper版本  这里对应的是3.4.8-->
+			<dependency> 
+			    <groupId>org.apache.curator</groupId> 
+			    <artifactId>curator-recipes</artifactId> 
+			    <version>${curator.version}</version> 
+			</dependency> 
 		</dependencies>
 	</dependencyManagement>
 
