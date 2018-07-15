@@ -9,14 +9,7 @@
 	<dubbo:application name="template-web" />
 
 	<!-- 使用zookeeper注册中心暴露服务地址 -->
-	<!-- 注册中心地址 -->
-	    <!-- zookeeper 注册中心
-        local : zookeeper://127.0.0.1:2181
-        dev : zookeeper://127.0.0.1:2181
-        test : zookeeper://127.0.0.1:2181
-        prod : zookeeper://127.0.0.1:2181
-     -->
-	<dubbo:registry protocol="zookeeper" address="${zookeeper.dev}" />
+	<dubbo:registry protocol="zookeeper" address="${zookeeper.address}" />
 	
 	<!-- 用户服务接口 -->
 <!-- 	<dubbo:reference interface="com.ddc.store.api.DubboUserService" id="dubboUserService" check="false" /> -->

@@ -66,11 +66,6 @@ mybatis-plus:
     cache-enabled: false
     call-setters-on-nulls: true
     
-zookeeper:
-  dev: zookeeper://localhost:2181
-  test: zookeeper://localhost:2181
-  prod: zookeeper://localhost:2181
-  
 logging:
   level: debug
   level.com.ddc: debug

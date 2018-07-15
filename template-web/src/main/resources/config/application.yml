@@ -63,11 +63,6 @@ app:
         expire: 604800
         header: token
 
-zookeeper:
-    dev : zookeeper://127.0.0.1:2181
-    test : zookeeper://127.0.0.1:2181
-    prod : zookeeper://127.0.0.1:2181
-    
 logging:
   level: debug
   level.com.ddc: debug
