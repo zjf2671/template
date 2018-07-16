@@ -2,14 +2,9 @@ package com.ddc.template.component.mq;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.amqp.rabbit.annotation.Exchange;
-import org.springframework.amqp.rabbit.annotation.Queue;
-import org.springframework.amqp.rabbit.annotation.QueueBinding;
-import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
 
 import com.alibaba.fastjson.JSON;
-import com.ddc.template.component.util.MqConstants;
 
 /**
  * 消息消费者
@@ -25,9 +20,9 @@ public class MessageReceiver {
      *
      * @param message
      */
-    @RabbitListener(bindings = @QueueBinding(value = @Queue(value = MqConstants.QUEUE_NAME, durable = "true", exclusive = "false", autoDelete = "false"),
-            exchange = @Exchange(value = MqConstants.EXCHANGES_NAME, ignoreDeclarationExceptions = "true",  autoDelete = "false"),
-            key = MqConstants.ROUTING_KEY))
+//    @RabbitListener(bindings = @QueueBinding(value = @Queue(value = MqConstants.QUEUE_NAME, durable = "true", exclusive = "false", autoDelete = "false"),
+//            exchange = @Exchange(value = MqConstants.EXCHANGES_NAME, ignoreDeclarationExceptions = "true",  autoDelete = "false"),
+//            key = MqConstants.ROUTING_KEY))
     public void receive(String message) {
         log.info(">>>>>>>>>>> receive：" + JSON.toJSONString(message));
     }
@@ -41,9 +36,9 @@ public class MessageReceiver {
      * @param message
      * @return
      */
-    @RabbitListener(bindings = @QueueBinding(value = @Queue(value = MqConstants.QUEUE_NAME_REPLY, durable = "true", exclusive = "false", autoDelete = "false"),
-            exchange = @Exchange(value = MqConstants.EXCHANGES_NAME, ignoreDeclarationExceptions = "true", autoDelete = "false"),
-            key = MqConstants.ROUTING_REPLY_KEY))
+//    @RabbitListener(bindings = @QueueBinding(value = @Queue(value = MqConstants.QUEUE_NAME_REPLY, durable = "true", exclusive = "false", autoDelete = "false"),
+//            exchange = @Exchange(value = MqConstants.EXCHANGES_NAME, ignoreDeclarationExceptions = "true", autoDelete = "false"),
+//            key = MqConstants.ROUTING_REPLY_KEY))
     public String receiveAndReply(String message) {
         log.info(">>>>>>>>>>> receive：" + JSON.toJSONString(message));
         return ">>>>>>>> I got the message";
