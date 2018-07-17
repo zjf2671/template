@@ -56,7 +56,7 @@ public class DynamicDataSourceInterceptor implements Interceptor {
 				lookupkey = DataSourceNames.FIRST;
 			}
 			DynamicDataSource.setDataSource(lookupkey);
-		}else{
+		} else {
 			DynamicDataSource.setDataSource(lookupkey);
 		}
 		return invocation.proceed();
