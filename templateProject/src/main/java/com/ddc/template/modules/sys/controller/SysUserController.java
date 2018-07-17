@@ -91,7 +91,8 @@ public class SysUserController extends AbstractController {
 	@RequiresPermissions("sys:user:info")
 	public R info(@PathVariable("userId") Long userId) {
 		SysUserEntity user = sysUserService.selectById(userId);
-
+		user.setSalt(null);
+		user.setPassword(null);
 		// 获取用户所属的角色列表
 		List<Long> roleIdList = sysUserRoleService.queryRoleIdList(userId);
 		user.setRoleIdList(roleIdList);
