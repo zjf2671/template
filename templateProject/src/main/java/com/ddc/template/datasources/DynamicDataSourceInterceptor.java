@@ -36,7 +36,7 @@ public class DynamicDataSourceInterceptor implements Interceptor {
 		boolean synchronizationActive = TransactionSynchronizationManager.isActualTransactionActive();
 		Object[] objects = invocation.getArgs();
 		MappedStatement ms = (MappedStatement) objects[0];
-		String lookupkey;
+		String lookupkey = DataSourceNames.FIRST;
 		if (synchronizationActive != true) {
 			// 读方法
 			if (ms.getSqlCommandType().equals(SqlCommandType.SELECT)) {
@@ -55,6 +55,8 @@ public class DynamicDataSourceInterceptor implements Interceptor {
 			} else {
 				lookupkey = DataSourceNames.FIRST;
 			}
+			DynamicDataSource.setDataSource(lookupkey);
+		}else{
 			DynamicDataSource.setDataSource(lookupkey);
 		}
 		return invocation.proceed();

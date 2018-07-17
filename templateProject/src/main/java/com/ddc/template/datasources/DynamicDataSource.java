@@ -29,7 +29,7 @@ public class DynamicDataSource extends AbstractRoutingDataSource {
     }
 
     public static void setDataSource(String dataSource) {
-    	logger.debug("所使用的数据源为："+dataSource);
+    	logger.debug("设置数据源为："+dataSource);
         contextHolder.set(dataSource);
     }
 
