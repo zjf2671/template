@@ -17,7 +17,7 @@
      - 完善的部门管理及数据权限，通过注解实现数据权限的控制
      - 完善的XSS防范及脚本过滤，彻底杜绝XSS攻击
      - 支持MySQL、Oracle、SQL Server、PostgreSQL等主流数据库
-     - 项目可以根据你的情况进行随机灵活组合，比如，可以template-api、template-web、template-facade、template-project
+     - 项目可以根据你的情况进行随机灵活组合，比如，可以template-api、template-web、template-facade、template-project组合为一个项目
  3. 项目介绍
     > 项目一共分为7个模块
 
