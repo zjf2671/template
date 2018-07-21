@@ -7,7 +7,7 @@
 		<artifactId>template</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>templateProject</artifactId>
+	<artifactId>template-project</artifactId>
 	<packaging>war</packaging>
 	<description>war包对应的pom，打war包，执行【mvn clean package -f pom-war.xml】</description>
 
