@@ -16,6 +16,7 @@
      - 完善的部门管理及数据权限，通过注解实现数据权限的控制
      - 完善的XSS防范及脚本过滤，彻底杜绝XSS攻击
      - 支持MySQL、Oracle、SQL Server、PostgreSQL等主流数据库
+     - 项目可以根据你的情况进行随机灵活组合，比如，可以template-api、template-web、template-facade、templateProject做为一个架构组合
  3. 项目介绍
     > 项目一共分为7个模块
 
@@ -26,7 +27,6 @@
     - template-api为服务接口模块，用于dubbo服务实现的api服务接口定义
     - template-facade为集中封装dubbo服务接口供template-app及template-web调用。
     - templateProject为dubbo服务提供实现接口，实现前后端分离。
-    - 项目可以根据你的情况进行随机灵活组合，比如，可以template-api、template-web、template-facade、templateProject做为一个架构组合。
  4. 本地部署
     - 环境要求JDK1.8、Tomcat8.5+、MySQL5.5+
     - git clone https://github.com/zjf2671/template.git
