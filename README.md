@@ -30,6 +30,7 @@
  4. 本地部署
     - 环境要求JDK1.8、Tomcat8.5+、MySQL5.5+
     - git clone https://github.com/zjf2671/template.git
+    
     > 【启动template-admin项目】 
     - 执行数据库脚本，如MySQL数据库，则执行 template-admin/db/template-admin.sql 文件，初始化数据
     - 修改application-dev.yml，更改数据库账号和密码
@@ -38,6 +39,7 @@
     - 账号密码：admin/admin
     - Swagger路径：http://localhost:8082/template-admin/swagger/index.html
     - Swagger注解路径：http://localhost:8082/template-admin/swagger-ui.html
+    
     > 【启动templateProject项目】 
     - 执行数据库脚本，如MySQL数据库，则执行 templateProject/db/template.sql 文件，初始化数据
     - 修改application-dev.yml，更改数据库账号和密码
