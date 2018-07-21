@@ -41,7 +41,7 @@
     > 【启动templateProject项目】 
     - 执行数据库脚本，如MySQL数据库，则执行 templateProject/db/template.sql 文件，初始化数据
     - 修改application-dev.yml，更改数据库账号和密码
-    - 运行com.ddc.template.AdminApplication.java的main方法，则可启动template-admin项目
+    - 运行com.ddc.template.TemplateApplication.java的main方法，则可启动templateProject项目
     - 项目访问路径：http://localhost:8081/template
     - 账号密码：admin/admin
     - Swagger路径：http://localhost:8081/template/swagger/index.html
