@@ -1,8 +1,8 @@
 swagger: '2.0'
 info:
-  description: store后台接口文档
+  description: template-web后台接口文档
   version: 2.0.0
-  title: store开发平台
+  title: template-web开发平台
 
 basePath: /template-web
 

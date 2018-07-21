@@ -17,7 +17,7 @@ spring:
     jackson:
         time-zone: GMT+8
         date-format: yyyy-MM-dd HH:mm:ss
-    http:
+    servlet:
         multipart:
             max-file-size: 100MB
             max-request-size: 100MB
@@ -26,8 +26,8 @@ spring:
     mail: 
         default-encoding: UTF-8 # Default MimeMessage encoding.
         host: smtp.exmail.qq.com # SMTP server host. For instance, `smtp.example.com`.
-        username: ddcstore@daydaycook.com # Login user of the SMTP server.
-        password: Dstore123 # Login password of the SMTP server.  
+        username:  # Login user of the SMTP server.
+        password:  # Login password of the SMTP server.
         #port: 465 # SMTP server port. 
         #protocol: smtp # Protocol used by the SMTP server.
         properties.mail.smtp.auth: true
