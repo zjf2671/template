@@ -53,5 +53,5 @@
     - Swagger注解路径：http://localhost:8081/template/swagger-ui.html
  5. 获取帮助
     - https://github.com/zjf2671/template
-    - 如需寻求帮助、项目建议、请提issues、我会第一时间进行解答或回复
+    - 如需寻求帮助、项目建议、请提Issues、我会第一时间进行解答或回复
       如需关注项目最新动态，请Watch、Star项目，同时也是对项目最好的支持
