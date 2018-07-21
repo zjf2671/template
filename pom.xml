@@ -18,7 +18,7 @@
 	<modules>
 		<module>template-api</module>
 		<module>template-common</module>
-		<module>templateProject</module>
+		<module>template-project</module>
 		<module>temppate-app</module>
 		<module>template-admin</module>
 		<module>template-facade</module>
@@ -65,7 +65,7 @@
 			</dependency>
 			<dependency>
 				<groupId>com.ddc</groupId>
-				<artifactId>templateProject</artifactId>
+				<artifactId>template-project</artifactId>
 				<version>0.0.1-SNAPSHOT</version>
 			</dependency>
 			<dependency>
