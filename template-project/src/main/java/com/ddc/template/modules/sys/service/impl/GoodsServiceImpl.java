@@ -3,6 +3,7 @@ package com.ddc.template.modules.sys.service.impl;
 import java.util.List;
 import java.util.Map;
 
+import com.ddc.template.common.utils.EmptyUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -63,6 +64,21 @@ public class GoodsServiceImpl extends ServiceImpl<GoodsDao, GoodsEntity> impleme
 			testUpateTransaction(i,i+1);
 		}
 	}
-	
+
+	@Override
+	@Servicelock
+	@Transactional
+	public void testLock() {
+		List<GoodsEntity> goodsEntities = this.selectList(new EntityWrapper<GoodsEntity>().eq("name",44));
+		if(EmptyUtils.isNotEmpty(goodsEntities)){
+			for (GoodsEntity coodsEntity:
+				 goodsEntities) {
+				coodsEntity.setName("55");
+			}
+			updateBatchById(goodsEntities);
+			System.out.println("我是有数据的执行地方。。。。");
+		}
+	}
+
 
 }

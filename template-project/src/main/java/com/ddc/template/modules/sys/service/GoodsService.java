@@ -18,5 +18,7 @@ public interface GoodsService extends IService<GoodsEntity> {
     public void testUpateTransaction(Integer num1, Integer num2);
     
     public void testUpdateListTransaction();
+
+    public void testLock();
 }
 
