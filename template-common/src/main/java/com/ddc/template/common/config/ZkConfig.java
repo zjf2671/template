@@ -16,7 +16,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class ZkConfig {
 	
-    @Value("${zookeeper.address: localhost:2181}")
+    @Value("${zookeeper.address:localhost:2181}")
     private String address;
     
 	@Bean
