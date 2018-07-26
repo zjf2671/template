@@ -30,6 +30,13 @@ public class RedisDistributedLock {
 
 	public static final String UNLOCK_LUA;
 
+	private static final String TIMEUNIT = "EX"; //EX = seconds  //PX = milliseconds
+
+	private static final String SET_IF_NOT_EXIST = "NX";
+
+	public ThreadLocal<String> lockFlag = new ThreadLocal<String>();
+
+
 	static {
 		StringBuilder sb = new StringBuilder();
 		sb.append("if redis.call(\"get\",KEYS[1]) == ARGV[1] ");
@@ -46,9 +53,11 @@ public class RedisDistributedLock {
 			RedisCallback<String> callback = (connection) -> {
 				JedisCommands commands = (JedisCommands) connection.getNativeConnection();
 				String uuid = UUID.randomUUID().toString();
-				return commands.set(key, uuid, "NX", "PX", expire);
+				lockFlag.set(uuid);
+				return commands.set(key, uuid, SET_IF_NOT_EXIST, TIMEUNIT, expire);
 			};
-			String result = redisTemplate.execute(callback); 
+			String result = redisTemplate.execute(callback);
+			System.out.println("------------"+result);
 			return !StringUtils.isEmpty(result);
 
 		} catch (Exception e) {
@@ -87,7 +96,7 @@ public class RedisDistributedLock {
 
 		} finally {
 			// 清除掉ThreadLocal中的数据，避免内存溢出
-			// lockFlag.remove();
+			lockFlag.remove();
 		}
 		return false;
 	}
