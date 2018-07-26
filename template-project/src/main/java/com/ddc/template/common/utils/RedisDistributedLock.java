@@ -34,8 +34,7 @@ public class RedisDistributedLock {
 
 	private static final String SET_IF_NOT_EXIST = "NX";
 
-	public ThreadLocal<String> lockFlag = new ThreadLocal<String>();
-
+	public static ThreadLocal<String> lockFlag = new ThreadLocal<String>();
 
 	static {
 		StringBuilder sb = new StringBuilder();
@@ -66,9 +65,10 @@ public class RedisDistributedLock {
 		return false;
 	}
 
-	public boolean releaseLock(String key, String requestId) {
+	public boolean releaseLock(String key) {
 		// 释放锁的时候，有可能因为持锁之后方法执行时间大于锁的有效期，此时有可能已经被另外一个线程持有锁，所以不能直接删除
 		try {
+			String requestId = lockFlag.get();
 			List<String> keys = new ArrayList<>();
 			keys.add(key);
 			List<String> args = new ArrayList<>();

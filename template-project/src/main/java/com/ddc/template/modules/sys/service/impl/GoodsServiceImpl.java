@@ -3,7 +3,6 @@ package com.ddc.template.modules.sys.service.impl;
 import java.util.List;
 import java.util.Map;
 
-import com.ddc.template.common.utils.EmptyUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -11,6 +10,7 @@ import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.plugins.Page;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import com.ddc.template.common.annotation.Servicelock;
+import com.ddc.template.common.utils.EmptyUtils;
 import com.ddc.template.common.utils.PageUtils;
 import com.ddc.template.common.utils.Query;
 import com.ddc.template.modules.sys.dao.GoodsDao;
@@ -66,7 +66,6 @@ public class GoodsServiceImpl extends ServiceImpl<GoodsDao, GoodsEntity> impleme
 	}
 
 	@Override
-	@Servicelock
 	@Transactional
 	public void testLock() {
 		List<GoodsEntity> goodsEntities = this.selectList(new EntityWrapper<GoodsEntity>().eq("name",44));
