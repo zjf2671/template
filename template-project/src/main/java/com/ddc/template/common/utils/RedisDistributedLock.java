@@ -56,7 +56,6 @@ public class RedisDistributedLock {
 				return commands.set(key, uuid, SET_IF_NOT_EXIST, TIMEUNIT, expire);
 			};
 			String result = redisTemplate.execute(callback);
-			System.out.println("------------"+result);
 			return !StringUtils.isEmpty(result);
 
 		} catch (Exception e) {
