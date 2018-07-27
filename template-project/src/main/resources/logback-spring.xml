@@ -60,7 +60,7 @@
         <append>true</append>
         <!-- 日志文件的格式 -->
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
-            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level %logger [Line:%-3L] : %msg%n</pattern>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger [Line:%-3L] : %msg%n</pattern>
             <charset>utf-8</charset>
         </encoder>
         <!-- 此日志文件只记录error级别的 -->
@@ -92,7 +92,7 @@
         <append>true</append>
         <!-- 日志文件的格式 -->
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
-            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level %logger [Line:%-3L] : %msg%n</pattern>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger [Line:%-3L] : %msg%n</pattern>
             <charset>utf-8</charset>
         </encoder>
         <!-- 此日志文件只记录warn级别的 -->
@@ -124,7 +124,7 @@
         <append>true</append>
         <!-- 日志文件的格式 -->
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
-            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level %logger [Line:%-3L] : %msg%n</pattern>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger [Line:%-3L] : %msg%n</pattern>
             <charset>utf-8</charset>
         </encoder>
         <!-- 此日志文件只记录info级别的 -->
@@ -156,7 +156,7 @@
         <append>true</append>
         <!-- 日志文件的格式 -->
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
-            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level %logger [Line:%-3L] : %msg%n</pattern>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger [Line:%-3L] : %msg%n</pattern>
             <charset>utf-8</charset>
         </encoder>
         <!-- 此日志文件只记录debug级别的 -->
@@ -187,7 +187,7 @@
         <append>true</append>
         <!-- 日志文件的格式 -->
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
-            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level %logger [Line:%-3L] : %msg%n</pattern>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger [Line:%-3L] : %msg%n</pattern>
             <charset>utf-8</charset>
         </encoder>
         <!-- 此日志文件只记录debug级别的 -->
