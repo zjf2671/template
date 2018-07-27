@@ -36,7 +36,7 @@
     > 【启动template-admin项目】 
     - 执行数据库脚本，如MySQL数据库，则执行 template-admin/db/template-admin.sql 文件，初始化数据
     - 修改application-dev.yml，更改数据库账号和密码
-    - 本地装上zeekeeper，用于注册dubbo服务，具体安装请自行百度
+    - 请装上zeekeeper、rabbitmq、redis,修改相应的配置文件，具体安装请自行百度
     - 运行com.ddc.template.AdminApplication.java的main方法，则可启动template-admin项目
     - 项目访问路径：http://localhost:8082/template-admin
     - 账号密码：admin/admin
@@ -47,7 +47,7 @@
     > 【启动template-project项目】 
     - 执行数据库脚本，如MySQL数据库，则执行 template-project/db/template.sql 文件，初始化数据
     - 修改application-dev.yml，更改数据库账号和密码
-    - 本地装上zeekeeper,用于注册dubbo服务，具体安装请自行百度
+    - 请装上zeekeeper、rabbitmq、redis,修改相应的配置文件，具体安装请自行百度
     - 运行com.ddc.template.TemplateApplication.java的main方法，则可启动template-project项目
     - 项目访问路径：http://localhost:8081/template
     - 账号密码：admin/admin
