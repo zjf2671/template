@@ -5,7 +5,7 @@ server:
         max-threads: 1000
         min-spare-threads: 30
     port: 8080
-    connection-timeout: 5000
+    connection-timeout: 5000ms
     servlet:
        context-path: /template-web
 
@@ -22,19 +22,6 @@ spring:
             max-file-size: 100MB
             max-request-size: 100MB
             enabled: true
-    # Email
-    mail: 
-        default-encoding: UTF-8 # Default MimeMessage encoding.
-        host: smtp.exmail.qq.com # SMTP server host. For instance, `smtp.example.com`.
-        username:  # Login user of the SMTP server.
-        password:  # Login password of the SMTP server.
-        #port: 465 # SMTP server port. 
-        #protocol: smtp # Protocol used by the SMTP server.
-        properties.mail.smtp.auth: true
-        properties.mail.smtp.starttls.enable: true
-        properties.mail.smtp.starttls.required: true
-        #test-connection: false
-        #jndi-name: # Session JNDI name. When set, takes precedence over other mail settings. 
     #freemarker
     freemarker:
              template-loader-path: classpath:/static/template/
