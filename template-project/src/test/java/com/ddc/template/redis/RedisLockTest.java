@@ -38,7 +38,7 @@ public class RedisLockTest extends BaseSpringBootTest {
                         //实现业务逻辑
                         System.out.println(Thread.currentThread() + "  acquire read lock");
                         goodsService.testLock();
-                        Thread.sleep(1000);
+                        Thread.sleep(7000);
                     }
                 }catch (Exception e){
                     e.printStackTrace();

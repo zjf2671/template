@@ -32,9 +32,11 @@ public class ZkTest extends BaseSpringBootTest{
             Callable<String> call = () -> {
                 try{
                     //获取锁
-                	zkLockUtil.acquire(1000,TimeUnit.SECONDS);
-                    System.out.println(Thread.currentThread() + "  acquire read lock");
-                    Thread.sleep(2000);
+                    boolean acquire = zkLockUtil.acquire(5, TimeUnit.SECONDS);
+                    if(acquire){
+                        System.out.println(Thread.currentThread() + "  acquire read lock");
+                        Thread.sleep(9000);
+                    }
                 }catch (Exception e){
                 }finally {
                     //释放锁

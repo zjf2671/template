@@ -3,6 +3,8 @@ package com.ddc.template.common.utils;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.curator.framework.recipes.locks.InterProcessMutex;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -13,16 +15,19 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class ZkLockUtil{
-	
+
+	private Logger logger = LoggerFactory.getLogger(getClass());
+
 	@Autowired
 	private InterProcessMutex interProcessMutex;
 	
     //获得了锁
     public boolean acquire(long time, TimeUnit unit){
-    	try {
+
+		try {
 			return interProcessMutex.acquire(time,unit);
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("获取锁失败",e);
 			return false;
 		}
     }
@@ -32,7 +37,7 @@ public class ZkLockUtil{
     	try {
     		interProcessMutex.release();
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("释放锁失败",e);
 		}
     }
     
