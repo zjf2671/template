@@ -3,14 +3,9 @@ spring:
         type: com.alibaba.druid.pool.DruidDataSource
         driverClassName: com.mysql.jdbc.Driver
         druid:
-            first:
-                url: jdbc:mysql://localhost:3306/template?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useSSL=true
-                username: root
-                password: 123456
-            second:
-                url: jdbc:mysql://localhost:3306/template?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useSSL=true
-                username: root
-                password: 123456
+            url: jdbc:mysql://localhost:3306/template?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useSSL=true
+            username: root
+            password: 123456
             initial-size: 10
             max-active: 100
             min-idle: 10
@@ -49,17 +44,17 @@ spring:
             max-idle: 10      # 连接池中的最大空闲连接
             min-idle: 5       # 连接池中的最小空闲连接
     # Email
-    mail: 
+    mail:
         default-encoding: UTF-8 # Default MimeMessage encoding.
         host: smtp.exmail.qq.com # SMTP server host. For instance, `smtp.example.com`.
         username:  # Login user of the SMTP server.
         password:  # Login password of the SMTP server.
-        #port: 465 # SMTP server port. 
+        #port: 465 # SMTP server port.
         #protocol: smtps # Protocol used by the SMTP server.
         properties.mail.smtp.auth: true
         properties.mail.smtp.starttls.enable: true
         properties.mail.smtp.starttls.required: true
         #test-connection: false
-        #jndi-name: # Session JNDI name. When set, takes precedence over other mail settings. 
+        #jndi-name: # Session JNDI name. When set, takes precedence over other mail settings.
 zookeeper:
-  address: localhost:2181      
+  address: localhost:2181
