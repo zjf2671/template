@@ -2,6 +2,7 @@ package com.ddc.template;
 
 import java.io.IOException;
 
+import com.alibaba.fastjson.JSON;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -20,7 +21,7 @@ public class FacadeApplication {
 	public static void main(String[] args) throws IOException {
 		ConfigurableApplicationContext run = SpringApplication.run(FacadeApplication.class, args);
 		LogFacade logFacade = (LogFacade) run.getBean("logFacade");
-		System.out.println(logFacade.queryLogById(1L));
+		System.out.println(JSON.toJSONString(logFacade.queryLogById(1L)));
 	}
 
 }
