@@ -6,8 +6,8 @@
 		<artifactId>template</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>temppate-app</artifactId>
-	<name>temppate-app</name>
+	<artifactId>template-app</artifactId>
+	<name>template-app</name>
 	<description>用于H5调用</description>
 
 	<properties>
