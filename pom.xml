@@ -8,7 +8,7 @@
 	<name>pom</name>
 	<description>这是一个模版项目</description>
 
-	<!-- 第一步：添加Springboot的parent -->
+	<!-- 第一步：添加SpringBoot的parent -->
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
