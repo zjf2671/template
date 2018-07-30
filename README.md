@@ -3,7 +3,7 @@
     [INFO] template-api ....................................... SUCCESS [  0.220 s]
     [INFO] template-common .................................... SUCCESS [  0.208 s]
     [INFO] template-project ................................... SUCCESS [  2.229 s]
-    [INFO] temppate-app ....................................... SUCCESS [  0.407 s]
+    [INFO] template-app ....................................... SUCCESS [  0.407 s]
     [INFO] template-admin ..................................... SUCCESS [  1.370 s]
     [INFO] template-facade .................................... SUCCESS [  0.050 s]
     [INFO] template-web ....................................... SUCCESS [  0.684 s]
