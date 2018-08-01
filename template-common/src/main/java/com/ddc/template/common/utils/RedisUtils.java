@@ -20,15 +20,15 @@ import javax.annotation.Resource;
 public class RedisUtils {
     @Autowired
     private RedisTemplate<String, ?> redisTemplate;
-    @Resource(name="redisTemplate")
+    @Autowired
     private ValueOperations<String, String> valueOperations;
-    @Resource(name="redisTemplate")
+    @Autowired
     private HashOperations<String, String, Object> hashOperations;
-    @Resource(name="redisTemplate")
+    @Autowired
     private ListOperations<String, Object> listOperations;
-    @Resource(name="redisTemplate")
+    @Autowired
     private SetOperations<String, Object> setOperations;
-    @Resource(name="redisTemplate")
+    @Autowired
     private ZSetOperations<String, Object> zSetOperations;
     /**  默认过期时长，单位：秒 */
     public final static long DEFAULT_EXPIRE = 60 * 60 * 24;
