@@ -12,7 +12,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.Map;
 
-
+/**
+ * @author harry.zhang
+ */
 @Service("sysOssService")
 public class SysOssServiceImpl extends ServiceImpl<SysOssDao, SysOssEntity> implements SysOssService {
 

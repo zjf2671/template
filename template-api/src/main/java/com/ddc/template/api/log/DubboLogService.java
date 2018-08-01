@@ -2,8 +2,11 @@ package com.ddc.template.api.log;
 
 import com.ddc.template.model.log.SysLogDTO;
 
+/**
+ * @author harry.zhang
+ */
 public interface DubboLogService {
 	
-	public SysLogDTO queryLogById(Long logId);
+	SysLogDTO queryLogById(Long logId);
 
 }

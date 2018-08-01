@@ -2,6 +2,9 @@ package com.ddc.template.api.user;
 
 import com.ddc.template.model.user.UserDTO;
 
+/**
+ * @author harry.zhang
+ */
 public interface DubboUserService {
 	
 	/**

@@ -25,7 +25,7 @@
 			<artifactId>template-common</artifactId>
 		</dependency>
 
-		<!-- springboot相关引用 -->
+		<!-- SpringBoot相关引用 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-freemarker</artifactId>
@@ -55,7 +55,7 @@
 			<scope>test</scope>
 		</dependency>
 
-		<!-- mybatisplus -->
+		<!-- MybatisPlus -->
 		<dependency>
 			<groupId>com.baomidou</groupId>
 			<artifactId>mybatisplus-spring-boot-starter</artifactId>

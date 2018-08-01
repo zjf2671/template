@@ -11,6 +11,9 @@ import com.ddc.template.modules.sys.entity.SysLogEntity;
 import com.ddc.template.modules.sys.service.SysLogService;
 
 
+/**
+ * @author harry.zhang
+ */
 @Service(version="1.0.0")
 public class DubboLogServiceImpl implements DubboLogService {
 

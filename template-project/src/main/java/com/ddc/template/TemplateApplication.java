@@ -11,6 +11,9 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.ddc.template.datasources.DynamicDataSourceConfig;
 
+/**
+ * @author harry.zhang
+ */
 @SpringBootApplication(exclude = { DataSourceAutoConfiguration.class })
 @Import({ DynamicDataSourceConfig.class })
 @EnableTransactionManagement

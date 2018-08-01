@@ -1,6 +1,8 @@
 package com.ddc.template.common.exception;
 
-
+/**
+ * @author harry.zhang
+ */
 public class SOAException extends BusinessException {
 	private static final long serialVersionUID = 5324959190479669618L;
 	private static int ERROR_CODE = -11;
