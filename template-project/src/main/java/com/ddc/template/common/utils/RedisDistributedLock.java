@@ -30,7 +30,10 @@ public class RedisDistributedLock {
 
 	public static final String UNLOCK_LUA;
 
-	private static final String TIMEUNIT = "EX"; //EX = seconds  //PX = milliseconds
+	/**
+	 * EX = seconds  PX = milliseconds
+	 */
+	private static final String TIMEUNIT = "EX";
 
 	private static final String SET_IF_NOT_EXIST = "NX";
 

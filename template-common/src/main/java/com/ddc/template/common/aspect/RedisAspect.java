@@ -20,7 +20,9 @@ import com.ddc.template.common.exception.BusinessException;
 @Configuration
 public class RedisAspect {
     private Logger logger = LoggerFactory.getLogger(getClass());
-    //是否开启redis缓存  true开启   false关闭
+    /**
+     * 是否开启redis缓存  true开启   false关闭
+     */
     @Value("${template.redis.open: false}")
     private boolean open;
 

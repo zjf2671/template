@@ -21,7 +21,9 @@ public class ZkLockUtil{
 	@Autowired
 	private InterProcessMutex interProcessMutex;
 	
-    //获得了锁
+	/**
+	 * 获得锁
+	 */
     public boolean acquire(long time, TimeUnit unit){
 
 		try {
@@ -31,8 +33,10 @@ public class ZkLockUtil{
 			return false;
 		}
     }
-    
-    //释放锁
+
+	/**
+	 * 释放锁
+	 */
     public void release(){
     	try {
     		interProcessMutex.release();

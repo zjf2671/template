@@ -6,7 +6,9 @@ package com.ddc.template.component.util;
  * @date 2018年6月14日下午6:38:52
  */
 public class MqConstants {
-	//生产者相关配置
+	/**
+	 * 生产者相关配置
+	 */
 	public final static String QUEUE_NAME = "template.queue";
 	public final static String QUEUE_NAME_REPLY = "template.queue.reply";
 	public final static String EXCHANGES_NAME = "template.exchanges";
