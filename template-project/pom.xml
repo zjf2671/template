@@ -30,6 +30,7 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
 		</dependency>
  		<!-- <dependency>
             <groupId>org.springframework</groupId>
@@ -73,14 +74,7 @@
 		    <artifactId>spring-boot-starter-amqp</artifactId>
 		</dependency>
 
-		<!-- junit测试 -->
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<scope>test</scope>
-		</dependency>
-
-		<!-- mybatisplus -->
+		<!-- MybatisPlus -->
 		<dependency>
 			<groupId>com.baomidou</groupId>
 			<artifactId>mybatisplus-spring-boot-starter</artifactId>
