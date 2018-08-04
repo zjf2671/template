@@ -21,8 +21,8 @@ SET FOREIGN_KEY_CHECKS=0;
 DROP TABLE IF EXISTS `sys_config`;
 CREATE TABLE `sys_config` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `key` varchar(50) DEFAULT NULL COMMENT 'key',
-  `value` varchar(2000) DEFAULT NULL COMMENT 'value',
+  `param_key` varchar(50) DEFAULT NULL COMMENT 'param_key',
+  `param_value` varchar(2000) DEFAULT NULL COMMENT 'param_value',
   `status` tinyint(4) DEFAULT '1' COMMENT '状态   0：隐藏   1：显示',
   `remark` varchar(500) DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`id`),

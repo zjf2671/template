@@ -32,7 +32,7 @@ public class SysConfigServiceImpl extends ServiceImpl<SysConfigDao, SysConfigEnt
 		Page<SysConfigEntity> page = this.selectPage(
 				new Query<SysConfigEntity>(params).getPage(),
 				new EntityWrapper<SysConfigEntity>()
-					.like(StringUtils.isNotBlank(key),"key", key)
+					.like(StringUtils.isNotBlank(key),"param_key", key)
 					.eq("status", 1)
 		);
 
@@ -64,7 +64,7 @@ public class SysConfigServiceImpl extends ServiceImpl<SysConfigDao, SysConfigEnt
 	public void deleteBatch(Long[] ids) {
 		for(Long id : ids){
 			SysConfigEntity config = this.selectById(id);
-			sysConfigRedis.delete(config.getKey());
+			sysConfigRedis.delete(config.getParamKey());
 		}
 
 		this.deleteBatchIds(Arrays.asList(ids));
@@ -78,7 +78,7 @@ public class SysConfigServiceImpl extends ServiceImpl<SysConfigDao, SysConfigEnt
 			sysConfigRedis.saveOrUpdate(config);
 		}
 
-		return config == null ? null : config.getValue();
+		return config == null ? null : config.getParamValue();
 	}
 	
 	@Override
