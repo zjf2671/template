@@ -17,6 +17,7 @@ import javax.annotation.Resource;
  * 
  */
 @Component
+@SuppressWarnings("unused")
 public class RedisUtils {
     @Autowired
     private RedisTemplate<String, ?> redisTemplate;
@@ -24,7 +25,7 @@ public class RedisUtils {
     private ValueOperations<String, String> valueOperations;
     @Autowired
     private HashOperations<String, String, Object> hashOperations;
-    @Autowired
+	@Autowired
     private ListOperations<String, Object> listOperations;
     @Autowired
     private SetOperations<String, Object> setOperations;
