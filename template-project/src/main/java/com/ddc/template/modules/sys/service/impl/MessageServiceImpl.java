@@ -6,6 +6,9 @@ import org.springframework.stereotype.Service;
 import com.ddc.template.component.mq.MessageSender;
 import com.ddc.template.modules.sys.service.MessageService;
 
+/**
+ * @author harry.zhang
+ */
 @Service("MessageService")
 public class MessageServiceImpl implements MessageService {
 	
