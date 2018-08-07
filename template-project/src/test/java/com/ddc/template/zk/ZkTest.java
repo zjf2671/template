@@ -30,9 +30,9 @@ public class ZkTest extends BaseSpringBootTest{
         try{
             List<Callable<String>> callList = new ArrayList<>();
             Callable<String> call = () -> {
+                //获取锁
+                boolean acquire = zkLockUtil.acquire(5, TimeUnit.SECONDS);
                 try{
-                    //获取锁
-                    boolean acquire = zkLockUtil.acquire(5, TimeUnit.SECONDS);
                     if(acquire){
                         System.out.println(Thread.currentThread() + "  acquire read lock");
                         Thread.sleep(9000);
@@ -40,8 +40,10 @@ public class ZkTest extends BaseSpringBootTest{
                 }catch (Exception e){
                 }finally {
                     //释放锁
-                	zkLockUtil.release();
-                    System.out.println(Thread.currentThread() + "  release read lock");
+                    if(acquire){
+                        zkLockUtil.release();
+                        System.out.println(Thread.currentThread() + "  release read lock");
+                    }
                 }
                 return "true";
             };
@@ -67,16 +69,20 @@ public class ZkTest extends BaseSpringBootTest{
            try{
                List<Callable<String>> callList = new ArrayList<>();
                Callable<String> call = () -> {
+                   //获取锁
+                   boolean acquire = typeLock.acquire(1000, TimeUnit.SECONDS);
                    try{
-                       //获取锁
-                   	typeLock.acquire(1000,TimeUnit.SECONDS);
-                       System.out.println(Thread.currentThread() + "  acquire read lock");
-                       Thread.sleep(2000);
+                       if(acquire){
+                           System.out.println(Thread.currentThread() + "  acquire read lock");
+                           Thread.sleep(2000);
+                       }
                    }catch (Exception e){
                    }finally {
                        //释放锁
-                   	typeLock.release();
-                       System.out.println(Thread.currentThread() + "  release read lock");
+                       if(acquire){
+                           typeLock.release();
+                           System.out.println(Thread.currentThread() + "  release read lock");
+                       }
                    }
                    return "true";
                };
