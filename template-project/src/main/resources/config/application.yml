@@ -8,6 +8,7 @@ server:
     connection-timeout: 5000ms
     servlet:
        context-path: /template
+    basedir: /data/apps/temp
 
 spring:
     # 环境 dev|test|prod
