@@ -4,7 +4,7 @@ Navicat MySQL Data Transfer
 Source Server         : localhost
 Source Server Version : 50529
 Source Host           : localhost:3306
-Source Database       : tmplate-admin
+Source Database       : template-admin
 
 Target Server Type    : MYSQL
 Target Server Version : 50529
@@ -26,7 +26,7 @@ CREATE TABLE `sys_config` (
   `status` tinyint(4) DEFAULT '1' COMMENT '状态   0：隐藏   1：显示',
   `remark` varchar(500) DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`id`),
-  UNIQUE KEY `key` (`key`)
+  UNIQUE KEY `uniq_param_key` (`param_key`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='系统配置信息表';
 
 -- ----------------------------
