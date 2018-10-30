@@ -7,7 +7,6 @@ server:
     port: 8082
     servlet:
         context-path: /admin
-    basedir: /data/apps/temp
 # mysql
 spring:
     # 环境 dev|test|prod
