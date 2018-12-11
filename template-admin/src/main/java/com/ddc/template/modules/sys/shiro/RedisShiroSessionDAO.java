@@ -4,6 +4,8 @@ import org.apache.shiro.session.Session;
 import org.apache.shiro.session.mgt.eis.EnterpriseCacheSessionDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
+import org.springframework.data.redis.serializer.JdkSerializationRedisSerializer;
 import org.springframework.stereotype.Component;
 
 import com.ddc.template.common.utils.RedisKeys;
@@ -19,6 +21,10 @@ import java.util.concurrent.TimeUnit;
 @Component
 @SuppressWarnings("unchecked")
 public class RedisShiroSessionDAO extends EnterpriseCacheSessionDAO {
+
+    Jackson2JsonRedisSerializer<Object> jackson2JsonRedisSerializer = new Jackson2JsonRedisSerializer<>(Object.class);
+    JdkSerializationRedisSerializer jdkSerializationRedisSerializer = new JdkSerializationRedisSerializer();
+
 	@SuppressWarnings("rawtypes")
 	@Autowired
     private RedisTemplate redisTemplate;
@@ -60,13 +66,26 @@ public class RedisShiroSessionDAO extends EnterpriseCacheSessionDAO {
     }
 
     private Session getShiroSession(String key) {
-        return (Session)redisTemplate.opsForValue().get(key);
+        //用jdk序列化(为了解决用jackson2JsonRedisSerializer序列化session的问题)
+        redisTemplate.setValueSerializer(jdkSerializationRedisSerializer);
+
+        Session session = (Session)redisTemplate.opsForValue().get(key);
+        //复原
+        redisTemplate.setValueSerializer(jackson2JsonRedisSerializer);
+        return session;
     }
 
     private void setShiroSession(String key, Session session){
+
+        //用jdk序列化(为了解决用jackson2JsonRedisSerializer序列化session的问题)
+        redisTemplate.setValueSerializer(jdkSerializationRedisSerializer);
+
         redisTemplate.opsForValue().set(key, session);
         //60分钟过期
         redisTemplate.expire(key, 60, TimeUnit.MINUTES);
+
+        //复原
+        redisTemplate.setValueSerializer(jackson2JsonRedisSerializer);
     }
 
 }
