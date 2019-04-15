@@ -103,7 +103,7 @@ CREATE TABLE `sys_log` (
 INSERT INTO `sys_log` VALUES ('1', 'admin', '保存角色', 'com.ddc.template.modules.sys.controller.SysRoleController.save()', '{\"roleId\":1,\"roleName\":\"tets\",\"remark\":\"111\",\"deptId\":1,\"deptName\":\"人人开源集团\",\"menuIdList\":[],\"deptIdList\":[],\"createTime\":\"Apr 2, 2018 10:33:13 AM\"}', '203', '0:0:0:0:0:0:0:1', '2018-04-02 10:33:13');
 INSERT INTO `sys_log` VALUES ('2', 'admin', '保存配置', 'com.ddc.template.modules.sys.controller.SysConfigController.save()', '{\"id\":2,\"key\":\"33\",\"value\":\"343\",\"remark\":\"2\"}', '26', '0:0:0:0:0:0:0:1', '2018-04-02 10:35:51');
 INSERT INTO `sys_log` VALUES ('3', 'admin', '修改配置', 'com.ddc.template.modules.sys.controller.SysConfigController.update()', '{\"id\":2,\"key\":\"33\",\"value\":\"343\",\"remark\":\"2\"}', '28', '0:0:0:0:0:0:0:1', '2018-04-02 10:36:39');
-INSERT INTO `sys_log` VALUES ('4', 'admin', '修改用户', 'com.ddc.template.modules.sys.controller.SysUserController.update()', '{\"userId\":1,\"username\":\"admin\",\"salt\":\"YzcmCZNvbXocrsz9dm8e\",\"email\":\"harry.zhang@daydaycook.com\",\"mobile\":\"13612345678\",\"status\":1,\"roleIdList\":[],\"createTime\":\"Nov 11, 2016 11:11:11 AM\",\"deptId\":1,\"deptName\":\"天堂集团\"}', '154', '0:0:0:0:0:0:0:1', '2018-04-02 10:49:57');
+INSERT INTO `sys_log` VALUES ('4', 'admin', '修改用户', 'com.ddc.template.modules.sys.controller.SysUserController.update()', '{\"userId\":1,\"username\":\"admin\",\"salt\":\"YzcmCZNvbXocrsz9dm8e\",\"email\":\"harry.zhang@template.com\",\"mobile\":\"13612345678\",\"status\":1,\"roleIdList\":[],\"createTime\":\"Nov 11, 2016 11:11:11 AM\",\"deptId\":1,\"deptName\":\"天堂集团\"}', '154', '0:0:0:0:0:0:0:1', '2018-04-02 10:49:57');
 INSERT INTO `sys_log` VALUES ('5', 'admin', '修改配置', 'com.ddc.template.modules.sys.controller.SysConfigController.update()', '{\"id\":2,\"key\":\"33\",\"value\":\"343\",\"remark\":\"2\"}', '401', '0:0:0:0:0:0:0:1', '2018-04-02 13:15:22');
 INSERT INTO `sys_log` VALUES ('6', 'admin', '修改配置', 'com.ddc.template.modules.sys.controller.SysConfigController.update()', '{\"id\":2,\"key\":\"33\",\"value\":\"343\",\"remark\":\"2\"}', '22295', '0:0:0:0:0:0:0:1', '2018-04-02 13:17:24');
 
@@ -241,7 +241,7 @@ CREATE TABLE `sys_user` (
 -- ----------------------------
 -- Records of sys_user
 -- ----------------------------
-INSERT INTO `sys_user` VALUES ('1', 'admin', 'e1153123d7d180ceeb820d577ff119876678732a68eef4e6ffc0b1f06a01f91b', 'YzcmCZNvbXocrsz9dm8e', 'harry.zhang@daydaycook.com', '13612345678', '1', '1', '2016-11-11 11:11:11');
+INSERT INTO `sys_user` VALUES ('1', 'admin', 'e1153123d7d180ceeb820d577ff119876678732a68eef4e6ffc0b1f06a01f91b', 'YzcmCZNvbXocrsz9dm8e', 'harry.zhang@template.com', '13612345678', '1', '1', '2016-11-11 11:11:11');
 
 -- ----------------------------
 -- Table structure for sys_user_role
