@@ -47,7 +47,7 @@
 		<qcloud.cos.version>4.4</qcloud.cos.version>
 		<swagger.version>2.2.2</swagger.version>
 		<joda.time.version>2.9.9</joda.time.version>
-		<beanutils.version>1.9.1</beanutils.version>
+		<beanutils.version>1.9.2</beanutils.version>
 		<fastjson.version>1.2.46</fastjson.version>
 
 		<!-- <dubbo-spring-boot>1.0.0</dubbo-spring-boot> -->
