@@ -35,18 +35,18 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<!-- <dependency> <groupId>org.springframework</groupId> <artifactId>spring-context-support</artifactId> 
-			</dependency> <dependency> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-starter-web</artifactId> 
-			</dependency> <dependency> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-starter-aop</artifactId> 
+		<!-- <dependency> <groupId>org.springframework</groupId> <artifactId>spring-context-support</artifactId>
+			</dependency> <dependency> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-starter-web</artifactId>
+			</dependency> <dependency> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-starter-aop</artifactId>
 			</dependency> <dependency> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-starter-data-redis</artifactId> 			<exclusions>
 				<exclusion>
 					<groupId>io.lettuce</groupId>
 					<artifactId>lettuce-core</artifactId>
 				</exclusion>
 			</exclusions>
-			</dependency> <dependency> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-configuration-processor</artifactId> 
+			</dependency> <dependency> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-configuration-processor</artifactId>
 			<optional>true</optional> </dependency> -->
-		<!-- <dependency> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-devtools</artifactId> 
+		<!-- <dependency> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-devtools</artifactId>
 			<optional>true</optional> </dependency> -->
 
 		<!-- MybatisPlus -->
@@ -139,6 +139,10 @@
 			</exclusions>
 		</dependency>
 		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>joda-time</groupId>
 			<artifactId>joda-time</artifactId>
 		</dependency>
@@ -149,7 +153,7 @@
 		</dependency>
 
 		<!-- Spring Boot Dubbo 依赖 -->
-		<!-- <dependency> <groupId>io.dubbo.springboot</groupId> <artifactId>spring-boot-starter-dubbo</artifactId> 
+		<!-- <dependency> <groupId>io.dubbo.springboot</groupId> <artifactId>spring-boot-starter-dubbo</artifactId>
 			<version>${dubbo-spring-boot}</version> </dependency> -->
 
 		<dependency>
